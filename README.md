@@ -2,8 +2,11 @@
 Process 4366298 rows csv
 
 A csv file contains 4,366,298 rows x 11 columns, the type of each columns as below.
- #   Column          Dtype  
+
+Column          Dtype  
+
 ---  ------          -----  
+
  0   pid             int64  
  1   datatime        object 
  2   measuretime     int64  
@@ -27,15 +30,22 @@ df_vip['datatime']=pd.to_datetime(df_vip['datatime'],errors='coerce')
 2. Add a column to extract Year
 
 import pandas as pd
+
 import numpy as np
+
 import time
+
 s=time.time()
+
 df_vip['date'] =df_vip['datatime'].dt.date
+
 print(df_vip)
 
 3. Divide the big volume data based on Year
 
 import datetime as dt
+
 df_vip1=df_vip[df_vip['date'].dt.year == 2014]
+
 print(df_vip1)
 
